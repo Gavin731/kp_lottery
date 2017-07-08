@@ -3,4 +3,48 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <color name="light_text_color">#999999</color>
+
+    <color name="tab_select_text_color">#357BE1</color>
+
+
+    <!--正文-->
+    <color name="black_1">#152029</color>
+    <color name="black_2">#879198</color>
+    <color name="black_3">#9EAEBC</color>
+    <color name="black_4">#AAB0B5</color>
+    <color name="black_5">#CDCDCD</color>
+    <color name="black_6">#EAEAEA</color>
+
+    <!-- blue -->
+    <color name="blue_1">#5795F4</color>
+    <color name="blue_2">#5A97F1</color>
+    <color name="blue_3">#B5D2FF</color>
+    <color name="blue_4">#F6FBFF</color>
+    <!-- orange -->
+    <color name="orange_1">#FF6939</color>
+    <color name="orange_2">#FF9F39</color>
+    <color name="orange_3">#FFD39C</color>
+    <color name="orange_4">#FFF8F0</color>
+    <!-- green -->
+    <color name="green_1">#74aa12</color>
+    <color name="green_2">#87BC3B</color>
+    <color name="green_3">#C0E685</color>
+    <color name="green_4">#F7FFEA</color>
+    <!-- purple -->
+    <color name="purple_1">#8875FF</color>
+    <color name="purple_2">#9786FF</color>
+    <color name="purple_3">#CFC6FF</color>
+    <color name="purple_4">#F7F6FF</color>
+    <!-- red -->
+    <color name="red_1">#FF7371</color>
+    <color name="red_2">#FF9B99</color>
+    <color name="red_3">#FFC7C6</color>
+    <color name="red_4">#FFF5F5</color>
+    <!-- onion green -->
+    <color name="onion_green_1">#25D1B1</color>
+    <color name="onion_green_2">#47E6C8</color>
+    <color name="onion_green_3">#9BF2E2</color>
+    <color name="onion_green_4">#EBFFFB</color>
 </resources>
