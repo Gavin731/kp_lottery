@@ -1,7 +1,5 @@
 package com.kp.lottery.main.http;
 
-import android.util.Log;
-
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
@@ -26,16 +24,12 @@ public class HttpCommonInterceptor implements Interceptor {
 
     @Override
     public Response intercept(Chain chain) throws IOException {
-        Log.d("HttpCommonInterceptor", "add common params");
         Request oldRequest = chain.request();
-
         // 添加新的参数，添加到url 中
        /* HttpUrl.Builder authorizedUrlBuilder = oldRequest.url()
                 .newBuilder()
                 .scheme(oldRequest.url().scheme())
                 .host(oldRequest.url().host());*/
-
-        // 新的请求
 
         Request.Builder requestBuilder = oldRequest.newBuilder();
         requestBuilder.method(oldRequest.method(), oldRequest.body());
@@ -45,11 +39,10 @@ public class HttpCommonInterceptor implements Interceptor {
                 requestBuilder.header(params.getKey(), params.getValue());
             }
         }
-
         Request newRequest = requestBuilder.build();
-
         return chain.proceed(newRequest);
     }
+
 
     public static class Builder {
         HttpCommonInterceptor mHttpCommonInterceptor;

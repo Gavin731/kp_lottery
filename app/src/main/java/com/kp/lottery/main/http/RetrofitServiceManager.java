@@ -19,14 +19,7 @@ public class RetrofitServiceManager {
         builder.writeTimeout(DEFAULT_READ_TIME_OUT, TimeUnit.SECONDS);//写操作 超时时间
         builder.readTimeout(DEFAULT_READ_TIME_OUT, TimeUnit.SECONDS);//读操作超时时间
 
-        // 添加公共参数拦截器
-        HttpCommonInterceptor commonInterceptor = new HttpCommonInterceptor.Builder()
-                .addHeaderParams("paltform", "android")
-                .addHeaderParams("userToken", "1234343434dfdfd3434")
-                .addHeaderParams("userId", "123445")
-                .build();
-        builder.addInterceptor(commonInterceptor);
-
+        builder.addInterceptor(getHeader());
 
         // 创建Retrofit
         mRetrofit = new Retrofit.Builder()
@@ -35,6 +28,16 @@ public class RetrofitServiceManager {
                 .addConverterFactory(GsonConverterFactory.create())
                 .baseUrl(ApiConfig.BASE_URL)
                 .build();
+    }
+
+    private HttpCommonInterceptor getHeader() {
+        // 添加公共参数拦截器
+        HttpCommonInterceptor commonInterceptor = new HttpCommonInterceptor.Builder()
+                .addHeaderParams("paltform", "android")
+                .addHeaderParams("userToken", "1234343434dfdfd3434")
+                .addHeaderParams("userId", "123445")
+                .build();
+        return commonInterceptor;
     }
 
     private static class SingletonHolder {
