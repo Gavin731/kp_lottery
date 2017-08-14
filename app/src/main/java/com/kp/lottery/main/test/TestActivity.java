@@ -7,6 +7,7 @@ import com.google.gson.GsonBuilder;
 import com.kp.lottery.kplib.app.KPActivity;
 import com.kp.lottery.kplib.log.KPLog;
 import com.kp.lottery.main.test.model.Movie;
+import com.kp.lottery.main.test.model.MovieSubject;
 
 import java.util.List;
 
@@ -30,9 +31,9 @@ public class TestActivity extends KPActivity {
 
     private void getMovieList(){
         MovieLoader movieLoader=new MovieLoader();
-        movieLoader.getMovie(0,10).subscribe(new Action1<List<Movie>>() {
+        movieLoader.getMovie(0,10).subscribe(new Action1<MovieSubject>() {
             @Override
-            public void call(List<Movie> movies) {
+            public void call(MovieSubject movies) {
                 KPLog.e("---getMovieList response："+movies);
             }
         }, new Action1<Throwable>() {

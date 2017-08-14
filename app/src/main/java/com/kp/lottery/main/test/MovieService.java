@@ -1,5 +1,6 @@
 package com.kp.lottery.main.test;
 
+import com.kp.lottery.main.http.BaseResponse;
 import com.kp.lottery.main.test.model.MovieSubject;
 
 import retrofit2.Call;
@@ -18,7 +19,7 @@ public interface MovieService {
 
     //获取豆瓣Top250 榜单
     @GET("top250")
-    Observable<MovieSubject> getTop250(@Query("start") int start, @Query("count")int count);
+    Observable<BaseResponse<MovieSubject>> getTop250(@Query("start") int start, @Query("count") int count);
 
     @FormUrlEncoded
     @POST("/x3/weather")

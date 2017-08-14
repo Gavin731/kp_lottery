@@ -40,11 +40,9 @@ public class MovieLoader extends ObjectLoader {
 //                    }
 //                });
 //    }
-
-
-    public Observable<List<Movie>> getMovie(int start, int count){
-        return observe(mMovieService.getTop250(start,count))
-                .map(new PayLoad<BaseResponse<List<Movie>>>());
+    public Observable<MovieSubject> getMovie(int start, int count) {
+        return observe(mMovieService.getTop250(start, count))
+                .map(new PayLoad<MovieSubject>());
     }
 
     public Observable<String> getWeatherList(String cityId, String key) {
